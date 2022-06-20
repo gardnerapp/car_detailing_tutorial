@@ -1,8 +1,12 @@
 import 'package:car_detailing/customAppBar.dart';
 import 'package:car_detailing/shared/book_appointment.dart';
 import 'package:car_detailing/shared/instruction_text.dart';
+import 'package:car_detailing/shared/service_option.dart';
 import 'package:flutter/material.dart';
 
+
+// TODO add callback to keep track of selected options and how much they cost
+// create additional instructions form & route to receipt page
 
 class Wash extends StatefulWidget {
   const Wash({Key key}) : super(key: key);
@@ -38,6 +42,14 @@ class _WashState extends State<Wash> {
                 selectTime = time;
               }),
             ),
+            SizedBox(height: 20),
+            instructionText("Please Select Your Options:\n"),
+            ServiceOption(
+              option: "Wax",
+              cost: 100.0,
+              handleChange: (bool val){
+              }
+            )
           ],
         )
     );
